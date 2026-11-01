@@ -1,4 +1,4 @@
-const CACHE = 'voca-' + self.registration.scope + '-v3';
+const CACHE = 'voca-' + self.registration.scope + '-v4';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
