@@ -4,6 +4,10 @@ Ein Vokabeltrainer als statische Web-App – ohne Konto, Server oder externe Bib
 
 ## Funktionen
 
+- Vor dem Training zwischen Lernmodus und Prüfungsmodus wählen.
+- Im Lernmodus Deutsch und Spanisch gemeinsam ansehen und mit Zurück/Weiter durch die Liste blättern.
+- Im Prüfungsmodus die Übersetzung eingeben und kontrollieren lassen.
+
 - Excel (.xlsx) und CSV importieren; Spalten zuordnen und Überschrift auswählen.
 - Zufällige Abfragen Deutsch → Spanisch, Spanisch → Deutsch oder gemischt.
 - Antworten tippen, prüfen und Lösungen anzeigen.
