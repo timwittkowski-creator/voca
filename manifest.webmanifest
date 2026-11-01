@@ -1,0 +1,18 @@
+{
+  "name": "Voca Vokabeltrainer",
+  "short_name": "Voca",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f1f4ef",
+  "theme_color": "#183c36",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "id": "./",
+  "scope": "./"
+}
