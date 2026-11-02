@@ -1,0 +1,17 @@
+/* Erweiterung: Lektionen und Aussprache */
+.lesson-control{background:#f4f7ef;border:1px solid #dfe9d9;border-radius:16px;padding:15px 17px;margin:-4px 0 20px}
+.lesson-control label{margin:0 0 8px;font-size:12px}
+.lesson-control select{background:#fff}
+.lesson-description{font-size:12px;color:#667c65;margin:8px 0 0;line-height:1.55}
+.lesson-import{border-top:1px solid #e6e9e0;margin:15px 0 0;padding-top:4px}
+.pronunciation{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:13px;color:#817460;margin-top:10px}
+.pronunciation[hidden],.voice-button[hidden]{display:none!important}
+.ipa{letter-spacing:.4px;font-size:13px}
+.voice-button{background:#e0eae0;color:#375b49;border-radius:24px;padding:8px 12px;border:1px solid #c8dacb;min-width:42px;min-height:38px;font-size:15px}
+.voice-button:hover{background:#ccddcd}
+.voice-button:disabled{opacity:.5;cursor:not-allowed}
+#examPronunciation{justify-content:flex-start;margin:7px 0 10px;font-size:12px}
+#questionPronunciation{margin-top:16px}
+#learnPronunciation{margin-top:10px}
+.import-message{font-size:11px;color:#758478;line-height:1.6}
+@media(max-width:650px){.lesson-control{padding:14px}.pronunciation{gap:8px}}
