@@ -19,7 +19,7 @@
   let imports = [];
   try {
     const stored = localStorage.getItem(STORAGE);
-    const prior = stored == null ? pairs : JSON.parse(stored);
+    const prior = stored == null ? (pairs.length ? pairs : JSON.parse(localStorage.getItem('voca-pairs-v1') || '[]')) : JSON.parse(stored);
     imports = Array.isArray(prior) ? prior.filter(valid).map(clean) : [];
   } catch (_) { imports = pairs.filter(valid).map(clean); }
   const builtins = lessons.flatMap(lesson =>
@@ -120,6 +120,7 @@
   }
   function rebuild() {
     pairs = builtins.concat(imports);
+    persistImports(); // Ensure migrated v1 data survives a reload.
     last = -1; learnIndex = 0; right = 0; total = 0; current = null;
     save();
     updateLessonOptions();
