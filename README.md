@@ -2,6 +2,18 @@
 
 Ein Vokabeltrainer als statische Web-App – ohne Konto, Server oder externe Bibliotheken.
 
+## Lektionen & Aussprache (Entwicklung)
+
+Dieser Zweig enthält die neue Lektionsverwaltung: Lektionen 1 bis 5 einzeln auswählen oder alle zusammen lernen, eigene Listen einer Lektion zuordnen, IPA-Lautschrift sehen und spanische Wörter per iOS-/Browser-Sprachausgabe anhören. Die Original-Lern- und Prüfungsmodi bleiben erhalten.
+
+**Wichtig:** Die fünf Buchlektionen sind noch nicht befüllt, weil die fünf fotografierten Vokabellisten noch fehlen. Sobald die Fotos verfügbar und die Wörter geprüft sind, werden sie in `lessons-data.js` eingetragen. Eigene Listen können schon jetzt importiert und einer Lektion zugeordnet werden. Bitte keine ungeprüften Buchwörter erfinden.
+
+**Aussprache:** IPA folgt standardmäßig europäischem Spanisch (`es-ES`). Für Buchvokabeln kann jeder Eintrag ein `ipa`-Feld haben; fehlt es, wird ausdrücklich „Lautschrift noch nicht hinterlegt“ angezeigt. Der Lautsprecher nutzt die Sprachsynthese des Geräts; Stimme und Genauigkeit hängen von der iOS-/Browser-Konfiguration ab. Eine synthetische Stimme ist keine Audioaufnahme aus dem Buch.
+
+**Datenschutz:** Die Bücher-Vokabeln sind als statische, damit bei öffentlichem GitHub-Repository öffentlich sichtbare Textdaten hinterlegt. Importierte eigene Wörter verbleiben lokal.
+
+**CSV mit optionalen Spalten:** `Deutsch;Spanisch;Lektion;IPA`. Bei jeder neuen Tabelle kann die Lektion alternativ beim Import ausgewählt werden. Vorhandene `voca-pairs-v1`-Daten werden in das neue Format übernommen.
+
 ## Funktionen
 
 - Vor dem Training zwischen Lernmodus und Prüfungsmodus wählen.
