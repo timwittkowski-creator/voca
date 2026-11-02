@@ -2,6 +2,22 @@
 
 Ein Vokabeltrainer als statische Web-App – ohne Konto, Server oder externe Bibliotheken.
 
+## Lektionen & Aussprache (Entwicklung)
+
+Dieser Zweig enthält die neue Lektionsverwaltung: Lektionen 1 bis 5 einzeln auswählen oder alle zusammen lernen, eigene Listen einer Lektion zuordnen, IPA-Lautschrift sehen und spanische Wörter per iOS-/Browser-Sprachausgabe anhören. Die Original-Lern- und Prüfungsmodi bleiben erhalten.
+
+**Datenstand:** Die fünf Buchlektionen enthalten insgesamt 1.012 erfasste Einträge (252 / 236 / 206 / 59 / 259). Die Erfassung ist noch nicht vollständig gegen die Fotos korrekturgelesen.
+
+**Aussprache:** IPA folgt standardmäßig europäischem Spanisch (`es-ES`). Die Lautschrift wird anhand der spanischen Schreibweise automatisch näherungsweise gebildet. Sie ist **keine** vollständig geprüfte phonetische Transkription und kann bei Eigennamen, Formulierungen und Sonderfällen fehlerhaft sein. Manuell importierte IPA-Einträge bleiben erhalten; fehlt eine IPA-Angabe, wird „Lautschrift noch nicht hinterlegt“ angezeigt. Der Lautsprecher nutzt die Sprachsynthese des Geräts; Stimme und Genauigkeit hängen von der iOS-/Browser-Konfiguration ab. Eine synthetische Stimme ist keine Audioaufnahme aus dem Buch.
+
+**Hinweis:** Das GitHub-Repository ist öffentlich. Alle fest eingebauten Buchvokabeln sind damit öffentlich lesbar. Bitte kläre vor weiterer Veröffentlichung die Nutzungsrechte am Lehrbuchmaterial. Importierte eigene Wörter verbleiben lokal.
+
+**CSV mit optionalen Spalten:** `Deutsch;Spanisch;Lektion;IPA`. Bei jeder neuen Tabelle kann die Lektion alternativ beim Import ausgewählt werden. Vorhandene `voca-pairs-v1`-Daten werden in das neue Format übernommen.
+
+## Getestet auf dem Entwicklungszweig
+
+Die fünf Datensätze wurden geladen und auf Vollständigkeit der Datenspalten kontrolliert. Alle 9 App-Skriptblöcke wurden auf JavaScript-Syntax geprüft; in einem simulierten Browser-DOM wurden der Lektionsfilter, das Vokabeltraining, alternative Antworten, Demo-Wörter und Lektionszuordnung beim Import durchgespielt. **Ein echter Test auf iPhone/Safari und die Freigabe für GitHub Pages sind noch offen.**
+
 ## Funktionen
 
 - Vor dem Training zwischen Lernmodus und Prüfungsmodus wählen.
