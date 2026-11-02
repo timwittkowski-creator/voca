@@ -1,5 +1,5 @@
-const CACHE = 'voca-' + self.registration.scope + '-v5';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './lessons.css', './lessons-data.js', './lessons.js'];
+const CACHE = 'voca-' + self.registration.scope + '-v6';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './lessons.css', './lessons-data.js', './lessons.js', './vocabulary/lesson-1.js', './vocabulary/lesson-2.js', './vocabulary/lesson-3.js', './vocabulary/lesson-4.js', './vocabulary/lesson-5.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
 });
