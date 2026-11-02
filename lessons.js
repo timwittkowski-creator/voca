@@ -71,7 +71,8 @@
     if (!word || !('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) return;
     try {
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(word.split('|')[0].trim());
+      const pronunciation = word.split('|')[0].replace(/\s*\([^)]*\)/g,'').replace(/\/[-a-záéíóúüñ]+/gi,'').replace(/\.\.\./g,'').trim();
+      const utterance = new SpeechSynthesisUtterance(pronunciation);
       utterance.lang = 'es-ES';
       utterance.rate = .86;
       const voices = window.speechSynthesis.getVoices();
@@ -85,6 +86,7 @@
     node.hidden = !item;
     if (!item) { node.dataset.spanish = ''; return; }
     const ipa = asText(item[2]).replace(/^\/|\/$/g, '');
+    node.querySelector('.ipa').title = 'Automatisch angenäherte IPA-Lautschrift (europäisches Spanisch)';
     node.querySelector('.ipa').textContent = ipa
       ? '/' + ipa + '/'
       : 'Lautschrift noch nicht hinterlegt';
