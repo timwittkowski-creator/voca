@@ -31,7 +31,8 @@
   control.className = 'lesson-control';
   control.innerHTML = '<label for="lessonSelect">📚 Welche Lektion möchtest du üben?</label>' +
     '<select id="lessonSelect" aria-label="Lektion wählen"></select>' +
-    '<p id="lessonDescription" class="lesson-description" role="status"></p>';
+    '<p id="lessonDescription" class="lesson-description" role="status"></p>' +
+    '<p class="muted">IPA ist automatisch angenähert und kann Fehler enthalten. Die spanische Stimme hängt vom Gerät ab; bevorzugt wird Spanisch (Spanien).</p>';
   document.querySelector('.mode-picker').before(control);
   const select = $('lessonSelect');
 
@@ -67,12 +68,13 @@
   document.querySelector('.flashcard').append(questionPron);
   $('feedback').after(examPron);
 
+  let activeUtterance; // Keep a reference while Safari speaks.
   function say(word) {
     if (!word || !('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) return;
     try {
       window.speechSynthesis.cancel();
       const pronunciation = word.split('|')[0].replace(/\s*\([^)]*\)/g,'').replace(/\/[-a-záéíóúüñ]+/gi,'').replace(/\.\.\./g,'').trim();
-      const utterance = new SpeechSynthesisUtterance(pronunciation);
+      const utterance = activeUtterance = new SpeechSynthesisUtterance(pronunciation);
       utterance.lang = 'es-ES';
       utterance.rate = .86;
       const voices = window.speechSynthesis.getVoices();
@@ -184,6 +186,9 @@
     if (mode === 'exam') $('answer').focus();
     stats();
   };
+
+  // Rebind the original button: assigning next above does not replace its saved handler.
+  $('next').onclick = () => next();
 
   const oldFinish = finish;
   finish = function (reveal = false) {
